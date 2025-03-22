@@ -12,7 +12,7 @@ var indexRouter = require("./index")
 var router = express.Router();
 const mongoose = require("mongoose");
 connectDB();
-var PORT = process.env.PORT || 3000;
+var PORT = 8080;
 
 //app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
