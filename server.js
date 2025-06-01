@@ -8,11 +8,10 @@ var path = require("path");
 var grid = require("gridfs-stream");
 const connectDB = require("./routes/connection");
 var route = require("./routes/api");
-var indexRouter = require("./index")
 var router = express.Router();
 const mongoose = require("mongoose");
 connectDB();
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
 
 //app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -21,7 +20,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.use("/test", indexRouter)
 app.use('/api', route);
 
 app.listen(PORT, function (err) {

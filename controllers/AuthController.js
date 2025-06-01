@@ -29,7 +29,7 @@ const register = async (req, res) => {
         })
         user.save().then(()=> {
              res.send({
-                "message":"You have been registered",
+                "message": user.id,
                 "successful": true })
              console.log(user,": user saved")
         }).catch((err)=> {
